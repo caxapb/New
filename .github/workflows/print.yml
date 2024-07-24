@@ -1,0 +1,17 @@
+name: Print Message on Data Folder Changes
+
+on:
+  push:
+    paths:
+      - 'data/**'  # Trigger the workflow when files in the 'data' folder change
+
+jobs:
+  print-message:
+    runs-on: ubuntu-latest  # The operating system for the workflow
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4  # Checks out the repository code
+        
+      - name: Print message
+        run: echo 'message is printed'  # Prints the message to the workflow logs
